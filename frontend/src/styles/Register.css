@@ -1,0 +1,51 @@
+/* Login.css */
+.register-container {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .register {
+    font-size: 2.5em;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 1em;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+  }
+  
+  .register-form input {
+    font-size: 1em;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 15em;
+    border-radius: 5px;
+    border: 2px solid #61dafb;
+    outline: none;
+  }
+  
+  .register-btn {
+    font-size: 1.2em;
+    color: black;
+    background-color: #61dafb;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .register-btn:hover {
+    background-color: white;
+    color: #61dafb;
+  }
+  

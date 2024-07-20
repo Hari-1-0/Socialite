@@ -1,0 +1,18 @@
+# .gitattributes
+* text=auto
+
+# Handle line endings automatically for files that are not binary
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Mark certain files as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary

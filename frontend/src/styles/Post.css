@@ -1,0 +1,100 @@
+.post {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-pic-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  margin-bottom: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.comments {
+  margin-top: 10px;
+}
+
+.comment {
+  margin-bottom: 5px;
+}
+
+.comment-input {
+  width: 70%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.post-date {
+  font-size: 13px;
+}
+.like-btn {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-btn.liked {
+  background-color: lightcoral;
+}
+
+.comment-btn {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  background-color: grey;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}

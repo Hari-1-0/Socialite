@@ -1,0 +1,95 @@
+.home {
+  background-color: black;
+  color: white;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .header h1 {
+    margin: 0;
+    color: green;
+    flex-grow: 1;
+    font-style: italic;
+    font-weight: 400;
+    font-size: xx-large;
+  }
+  
+  .user-actions {
+    position: relative;
+  }
+  
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  .search-result {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .search-result:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .profile-settings {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-button {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+.add-post-form {
+  margin-left: 10px;
+}
+  .add-post-form-inputs {
+    display: flex;
+  }
+  .add-post-form-inputs textarea {
+    height: 35px;
+    margin-right: 5px;
+  }
+  .add-post-form-inputs input {
+    margin-right: 5px;
+  }
+.post-btn {
+    margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  background-color: rgb(131, 91, 243);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+.success-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  text-align: center;
+}
+.posts-container {
+  margin-left: 10px;
+}

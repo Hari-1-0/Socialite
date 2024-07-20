@@ -1,0 +1,4 @@
+Operations to perform:
+  Apply all migrations: admin, api, auth, contenttypes, sessions
+Running migrations:
+  Applying api.0004_alter_addcomment_options_and_more...
