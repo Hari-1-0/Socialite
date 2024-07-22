@@ -16,7 +16,7 @@ const Post = ({ post }) => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/profiles/user/${post.user}/`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/profiles/user/${post.user}/`);
         setUserDetails(response.data);
       } catch (err) {
         console.error('Error fetching user details:', err);
@@ -25,7 +25,7 @@ const Post = ({ post }) => {
 
     const fetchComments = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/comments/');
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/comments/`);
         const filteredComments = response.data.filter(comment => comment.post === post.id);
         setComments(filteredComments);
       } catch (err) {
@@ -36,7 +36,7 @@ const Post = ({ post }) => {
     const fetchLikedStatus = async () => {
       const access_token = localStorage.getItem('access_token');
       try {
-        const response = await axios.get(`http://localhost:8000/api/like-status/${post.id}/`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/like-status/${post.id}/`, {
           headers: {
             'Authorization': `Bearer ${access_token}`,
           },
@@ -58,7 +58,7 @@ const Post = ({ post }) => {
     try {
     const token = localStorage.getItem('access_token');
       const response = await axios.post(
-        'http://localhost:8000/api/comments/',
+        `${import.meta.env.VITE_BACKEND_URL}/api/comments/`,
         { post: post.id, content: newComment },
         {
           headers: {
@@ -77,7 +77,7 @@ const Post = ({ post }) => {
     try {
       const token = localStorage.getItem('access_token');
       const response = await axios.post(
-        `http://localhost:8000/api/like/`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/like/`,
         { post: post.id },
         {
           headers: {

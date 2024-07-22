@@ -16,7 +16,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/profiles/user/${id}/`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/profiles/user/${id}/`);
         setProfile(response.data);
       } catch (err) {
         setError('Error fetching profile. Please try again.');
@@ -28,7 +28,7 @@ const Profile = () => {
     };
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/posts/');
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/posts/`);
         const userPosts = response.data.filter(post => post.user === parseInt(id));
         setPosts(userPosts);
       } catch (err) {
@@ -43,7 +43,7 @@ const Profile = () => {
 
   const handleUpdateBio = async () => {
     try {
-      await axios.patch(`http://localhost:8000/api/profiles/user/${id}/`, { bio: newBio }, {
+      await axios.patch(`${import.meta.env.VITE_BACKEND_URL}/api/profiles/user/${id}/`, { bio: newBio }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('access_token')}`,
         },
@@ -59,7 +59,7 @@ const Profile = () => {
     const formData = new FormData();
     formData.append('profile_image', newProfileImage);
     try {
-      await axios.patch(`http://localhost:8000/api/profiles/user/${id}/`, formData, {
+      await axios.patch(`${import.meta.env.VITE_BACKEND_URL}/api/profiles/user/${id}/`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('access_token')}`,
           'Content-Type': 'multipart/form-data',
@@ -74,7 +74,7 @@ const Profile = () => {
 
   const handleDeletePost = async (postId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/posts/${postId}/`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${postId}/`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('access_token')}`,
         },

@@ -28,7 +28,7 @@ const Home = () => {
   
   const fetchPosts = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/posts/`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/posts/`);
       const data = await response.json();
       setPosts(data);
     } catch (err) {
@@ -57,7 +57,7 @@ const Home = () => {
         formData.append('image', image, image.name);
       }
 
-      const response = await axios.post('http://localhost:8000/api/posts/', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/posts/`, formData, {
         headers: {
               'Authorization': `Bearer ${access_token}`,
               'Content-Type': 'multipart/form-data',
@@ -80,7 +80,7 @@ const Home = () => {
 
     if (query) {
       try {
-        const response = await axios.get(`http://localhost:8000/api/search-users/?q=${query}`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/search-users/?q=${query}`);
         setSearchResults(response.data);
       } catch (err) {
         console.error('Error searching users:', err);

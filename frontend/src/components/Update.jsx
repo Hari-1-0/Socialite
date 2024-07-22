@@ -16,7 +16,7 @@ const Update = () => {
 
     const fetchPostDetails = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/posts/${id}/`,{
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${id}/`,{
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('access_token')}`,
                   },
@@ -49,7 +49,7 @@ const Update = () => {
                 formData.append('image', image, image.name);
             }
 
-            await axios.put(`http://localhost:8000/api/posts/${id}/`, formData, {
+            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/posts/${id}/`, formData, {
                 headers: {
                     'Authorization': `Bearer ${access_token}`,
                     'Content-Type': 'multipart/form-data',
