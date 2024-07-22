@@ -77,7 +77,7 @@ class ProfileDetailByUserId(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         user_id = self.kwargs['user_id']
-        return Profile.objects.get(username__id=user_id)
+        return Profile.objects.get(user__id=user_id)
     
 class LikeStatusView(APIView):
     permission_classes = [IsAuthenticated]

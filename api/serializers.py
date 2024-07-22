@@ -20,7 +20,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ['username', 'bio', 'profile_image']
     def get_username(self, obj):
-        return obj.username.username
+        return obj.user.username
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
