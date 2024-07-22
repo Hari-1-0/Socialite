@@ -11,7 +11,7 @@ const Post = ({ post }) => {
   const [newComment, setNewComment] = useState('');
   const [liked, setLiked] = useState(false);
 
-  const loggedInUser = JSON.parse(localStorage.getItem('userDetails'));
+  const loggedInUser = JSON.parse(localStorage.getItem('USER_DETAILS'));
 
   useEffect(() => {
     const fetchUserDetails = async () => {

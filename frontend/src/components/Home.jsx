@@ -15,7 +15,7 @@ const Home = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const loggedInUser = JSON.parse(localStorage.getItem('userDetails'));
+  const loggedInUser = JSON.parse(localStorage.getItem('USER_DETAILS'));
 
   useEffect(() => {
     fetchPosts();

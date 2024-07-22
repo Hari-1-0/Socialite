@@ -23,7 +23,7 @@ const Profile = () => {
       }
     };
     const fetchLoggedInUser = async () => {
-      const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+      const userDetails = JSON.parse(localStorage.getItem('USER_DETAILS'));
       setLoggedInUser(userDetails);
     };
     const fetchPosts = async () => {
@@ -152,7 +152,7 @@ const Profile = () => {
         ) : (
           posts.map(post => (
             <div key={post.id} className="post">
-              {post.image && <img src={`http://localhost:8000${post.image}`} alt="Post" className="post-image" />}
+              {post.image && <img src={`https://res.cloudinary.com/dkmndrjks/${post.image}`} alt="Post" className="post-image" />}
               <p>{post.content}</p>
               <p className='post-date'>{formatDate(post.created_at)}</p>
               {loggedInUser && loggedInUser.id === parseInt(id) && (

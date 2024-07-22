@@ -18,24 +18,19 @@ load_dotenv()
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-cloudinary.config(
-    cloud_name='dkmndrjks',
-    api_key='819167778286551',
-    api_secret='D-OMGsebZd27ptaqVOXXY7FLt8w'
-)
-CLOUDINARY_URL='cloudinary://819167778286551:D-OMGsebZd27ptaqVOXXY7FLt8w@dkmndrjks'
+CLOUDINARY_URL= os.getenv('CLOUDINARY_URL')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i71l8p@ny*0)p!o4316gdl8*eou%j9q(#^9zowk$y_t9f)5=^!'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -108,10 +103,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL')
+    )
 }
 
 

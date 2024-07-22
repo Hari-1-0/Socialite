@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import axiosInstance from '../axiosInstance';
+import { ACCESS_TOKEN, REFRESH_TOKEN, USER_DETAILS } from '../constants';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -14,12 +16,12 @@ const Login = () => {
 
     const fetchUserDetails = async (token) => {
       try {
-        const response = await axios.get('http://localhost:8000/api/user-details/', {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user-details/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        localStorage.setItem('userDetails', JSON.stringify(response.data));
+        localStorage.setItem('USER_DETAILS', JSON.stringify(response.data));
       } catch (err) {
         console.error('Error fetching user details:', err);
       }
@@ -30,7 +32,7 @@ const Login = () => {
         setError('');
     
         try {
-          const response = await axios.post('http://localhost:8000/api/token/', {
+          const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/token/`, {
             username,
             password,
           });
