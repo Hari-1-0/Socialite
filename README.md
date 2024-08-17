@@ -8,7 +8,10 @@ Socialite is a **full-stack social media application** built with *ReactJS* on t
 
 ## Installation
 
-To install the dependencies, run:
+### Clone the repository:
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/yourusername/Socialite.git
+cd Socialite
+
+### Set up the backend:
