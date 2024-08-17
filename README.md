@@ -10,7 +10,7 @@ Socialite is a **full-stack social media application** built with *ReactJS* on t
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Socialite.git
+git clone https://github.com/Hari-1-0/Socialite.git
 cd Socialite
 ```
 
