@@ -6,3 +6,9 @@ Socialite is a **full-stack social media application** built with *ReactJS* on t
 - **User Profiles**: Each user has a profile where they can update their profile picture and bio.
 - **Posts and Interactions**: Users can create, update, and delete posts with text and images.
 
+## Installation
+
+To install the dependencies, run:
+
+```bash
+pip install -r requirements.txt
