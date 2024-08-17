@@ -34,8 +34,24 @@ DATABASE_URL=your_database_url
 CLOUDINARY_URL=cloudinary://APIKEY:APISECRET@CLOUDNAME
 ```
 
+## Set up the frontend:
+Navigate to the frontend directory and install dependencies:
+```bash
+cd frontend
+npm install
+```
+### Run the app:
+In the root directory, run:
+```bash
+python manage.py runserver
+```
+In the frontend directory, start the React development server:
+```bash
+npm run dev
+```
 
-
+#### Access the app:
+Open your browser and go to http://localhost:8000
 
 
 
