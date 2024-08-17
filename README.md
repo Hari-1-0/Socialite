@@ -9,9 +9,41 @@ Socialite is a **full-stack social media application** built with *ReactJS* on t
 ## Installation
 
 ### Clone the repository:
-
 ```bash
 git clone https://github.com/yourusername/Socialite.git
 cd Socialite
+```
 
 ### Set up the backend:
+```bash
+pip install -r requirements.txt
+```
+
+### Set up the database:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### Create a .env file for environment variables:
+```bash
+SECRET_KEY=your_secret_key
+DEBUG=True
+ALLOWED_HOSTS=localhost
+DATABASE_URL=your_database_url
+CLOUDINARY_URL=cloudinary://APIKEY:APISECRET@CLOUDNAME
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
